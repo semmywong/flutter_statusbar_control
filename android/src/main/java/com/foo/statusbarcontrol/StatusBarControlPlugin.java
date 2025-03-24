@@ -1,27 +1,23 @@
 package com.foo.statusbarcontrol;
 
+import javax.swing.text.View;
+
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.os.Build;
 import android.util.Log;
-import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowManager;
-
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * StatusBarControlPlugin
@@ -44,14 +40,14 @@ public class StatusBarControlPlugin implements FlutterPlugin, ActivityAware, Met
         channel.setMethodCallHandler(this);
     }
 
-    public static void registerWith(Registrar registrar) {
-        // For compatibility of apps not using the v2 Android embedding
-        Log.d("StatusBarControl", "StatusBarControl: Registered with Compatibility");
-        activity = registrar.activity();
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), channelName);
-        StatusBarControlPlugin instance = new StatusBarControlPlugin();
-        channel.setMethodCallHandler(instance);
-    }
+    // public static void registerWith(Registrar registrar) {
+    //     // For compatibility of apps not using the v2 Android embedding
+    //     Log.d("StatusBarControl", "StatusBarControl: Registered with Compatibility");
+    //     activity = registrar.activity();
+    //     final MethodChannel channel = new MethodChannel(registrar.messenger(), channelName);
+    //     StatusBarControlPlugin instance = new StatusBarControlPlugin();
+    //     channel.setMethodCallHandler(instance);
+    // }
 
     @Override
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
