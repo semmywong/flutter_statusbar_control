@@ -1,23 +1,26 @@
 package com.foo.statusbarcontrol;
 
-import javax.swing.text.View;
-
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
-import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.annotation.TargetApi;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowManager;
+
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.plugin.common.MethodChannel.Result;
 
 /**
  * StatusBarControlPlugin
