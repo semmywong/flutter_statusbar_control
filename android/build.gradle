@@ -22,7 +22,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'com.reesam.deepbox'
+    namespace 'com.foo.statusbarcontrol'
     compileSdkVersion 31
 
     defaultConfig {
